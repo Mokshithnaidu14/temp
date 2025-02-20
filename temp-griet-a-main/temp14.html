@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+     .container{
+      background-color:  silver ;
+      height: 100%;
+      width: 50%;
+      display: flex;
+      /* justify-content: center;
+      align-items: center ; */
+      justify-content: center;
+      margin: 40px;
+      padding: 0px;
+     }
+     .box input{
+      height: 40px;;
+      background-color: yellow;
+      margin: 20px;
+     }
+     button{
+      background-color: blue;
+      justify-content: center;
+      margin: 20px;
+      padding: 20px;
+      border: 20px;
+      height: 50px;
+     }
+     *{
+      margin: 0px;
+      align-content: center;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div id="msg"></div>
+          <p>
+            <input
+            type="text"
+            id="name"
+            placeholder="Email address or phone number"
+            />
+          </p>
+        <p><input type="password" id="pwd" placeholder="Password" /></p>
+        <button onclick="chkUser()">Log in</button>
+      </div>
+    </div>
+    <script>
+      function chkUser(e) {
+        let b = document.querySelector(".box");
+        b.style.backgroundColor = "teal";
+        //let username = document.getElementById("name").value
+        let username = document.querySelector("#name").value;
+        let password = document.getElementById("pwd").value;
+        if (username == "" || password == "") {
+          msg.innerHTML = "Email Address and Password cannot be blank";
+        } else if (username !== "john@gmail.com" || password !== "1234") {
+          msg.innerHTML = "Access Denied";
+        } else {
+          msg.innerHTML = "Welcome John!";
+        }
+      }
+    </script>
+  </body>
+</html>
